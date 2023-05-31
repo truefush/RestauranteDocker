@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Hotel 93 Luxury Suites</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <!-- <script src="js/scripts.js"></script> -->
+  </head>
+  <body>
+    <div class="contenedor-form">
+      <div class="toggle">
+        <span class="toggle_text"> Crear Cuenta</span>
+      </div>
+
+      <div class="formulario">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+          <input
+            type="text"
+            id="correo"
+            placeholder="Correo electrónico"
+            required
+          />
+          <input
+            type="password"
+            id="contrasenaLogin"
+            placeholder="Contraseña"
+            required
+          />
+          <button class="iniciar_sesion_button" type="button" onclick="login()">
+            Iniciar sesión
+          </button>
+          <!-- <input class="iniciar_sesion_button" type="submit" onclick="iniciarSesion()" value="Iniciar Sesión"> -->
+        </form>
+      </div>
+
+      <div class="formulario">
+        <h2>Crea tu Cuenta</h2>
+        <form id="registroForm">
+          <input type="text" id="nombre" placeholder="Nombre" required />
+
+          <input
+            type="text"
+            id="correoRegistro"
+            placeholder="Correo Electronico"
+            required
+          />
+
+          <input
+            type="password"
+            id="contrasena"
+            placeholder="Contraseña"
+            required
+          />
+
+          <input type="number" id="telefono" placeholder="Teléfono" required />
+
+          <button class="registrarse_button" type="button" onclick="registro()">
+            Registrarse
+          </button>
+        </form>
+      </div>
+      <!--<div class="reset-password">
+            <a href="#">Olvide mi Contraseña?</a>
+        </div> -->
+    </div>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

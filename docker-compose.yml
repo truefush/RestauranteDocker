@@ -1,0 +1,38 @@
+version: "3.6"
+
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "Rojo123"
+      MYSQL_DATABASE: "restaurante"
+    ports:
+      - "33061:3306"
+    volumes:
+      - "./data:/var/lib/mysql:rw"
+    networks:
+      - mynetwork
+  backend:
+    image: restaurante-backend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8090:8080"
+    networks:
+      - mynetwork
+  frontend:
+    image: restaurante-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "5000:80"
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge

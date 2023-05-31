@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HOTEL 93 - LUXURY SUITES </title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+     
+
+</head>
+
+<body>
+      
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="img/1_LOGO.jpg" alt="">
+        </a>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+
+        <!-- Items del carrito -->
+
+        <div id="contenedor_carrito" class="cart-items-container">
+
+           <!-- <div id="item1" class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="img/cart-item-1.png" alt="">
+                <div class="content">
+                    <h3 id="nombre">cart item 01 X<span id="item_cantidad">10</span></h3>                   
+                    <div class="price">$15.99</div>
+                </div>
+            </div> -->
+
+
+
+
+
+            <a href="#" class="btn">checkout now</a>
+        </div>
+
+
+
+         <!-- Inicio la edición -->
+
+         <div id="prof_div_1" class="profile_container">
+
+            <div id="prof_div_1_div_img" class="img_container"><img class="profile_picture" src="img/no-profile-picture.svg"></div>
+            <!-- Imagen tomada de: https://uxwing.com/no-profile-picture-icon/ -->
+            
+            <div id="prof_div_1_div_info" class="profile_info_container">
+                <span class="profile_name">  </span> </br>
+                <span class="profile_email" style="text-transform:
+                lowercase">  </span>
+                <input class="btn" id="btn-logout" type="button" onclick="logOut()" value="Logout"> 
+            </div>
+            
+        </div>
+        
+
+    
+
+    </header>
+
+    
+
+
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>NOMAD RESTAURANTE</h3>
+            <p>
+                El restaurante NOMAD se enfoca en brindar un servicio con calidad, teniendo encuenta 
+                la alimentación y nutrición de nuestros huespedes, brindando comodidad y ambiente de hogar.
+            </p>
+        </div>
+    
+    </section>
+
+    <!-- about section ends -->
+
+    <!-- menu section starts  -->
+
+    <section class="menu" id="menu">
+
+        <h1 class="heading"> Nuestro <span>menu</span> </h1>
+    
+        <div class="box-container">
+    
+            <div id="producto1" class="box">               
+                <img src="img/2_ceviche_costero.jpg" alt="">
+                <h3 >ceviche costero</h3>
+                <p class="descripcion">
+                    Pescado, camarón, cebolla encurtida,aguacate, tomate, ají & vinagreta ahumada
+                    Fish, shrimps, pickled onion, avocado,tomato, chilli pepper & smoked vinaigrette
+                </p>
+                <div id="price1" class="price">$23.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('0')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+
+            </div>
+    
+            <div id="producto2" class="box">
+                <img src="img/3_ceviche_pescado.jpg" alt="">
+                <h3>ceviche pescado</h3>
+                <p>
+                Pescado blanco, camarón, vegetales y
+                limón común.
+                White Fish, shrimp, vegetables and
+                </p>
+                <div class="price">$21.000</div>                
+                <input type="button" class="btn" onclick="añadirAlCarrito('1')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto3" class="box">
+                <img src="img/4_empeandas_paye.jpg" alt="">
+                <h3>empanadas paye</h3>
+                <p>
+                    Maíz nacional, camarón & calamar.
+                    Corn, shrimps & calamari.
+                </p>
+                <div class="price">$18.000 </div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('2')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto4" class="box">
+                <img src="img/5_fritura_bahia.jpg" alt="">
+                <h3>fritura de bahía</h3>
+                <p>
+                    Tradicional receta de la gastronomía
+                    bluedoors, preparamos un filete de
+                    tilapia con vegetales y mayonesa de
+                    tomates secos.
+                    Bluedoors gastronomy's traditional recipe,
+                    tilapia steak with vegetables and dried
+                    tomatoes's mayonnaise.
+                </p>
+                <div class="price">$19.000 </div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('3')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto5" class="box">
+                <img src="img/6_alitas_pollo.jpg" alt="">
+                <h3>alitas de pollo</h3>
+                <p>
+                    Cocinadas en humo de cerezo - las
+                    servimos con mostaza picante
+                    Smoked wings (Cherry's Tree Smoke)
+                    served with spicy mustard sauce.
+                </p>
+                <div class="price">$19.000 </div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('4')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto6" class="box">
+                <img src="img/7_bocaditos_pollo_picante.jpg" alt="">
+                <h3>bocaditos de pollo picante</h3>
+                <p>
+                    Mezclado con salsa de chili & jengibre.
+                    Tossed in a sweet and spicy chili-ginger
+                    sauce.
+                </p>
+                <div class="price">$19.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('5')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto7"  class="box">
+                <img src="img/8_palitos_queso.jpg" alt="">
+                <h3>palitos de queso crujientes</h3>
+                <p>
+                    Fried mozzarella chesse sticks
+                </p>
+                <div class="price">$14.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('6')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto8" class="box">
+                <img src="img/9_empanadas_santaferenas.jpg" alt="">
+                <h3>empanadas satafereñas</h3>
+                <p>
+                    Auténticas de nuestra gastronomía
+                    bogotana servimos tres sabores (Carne,
+                    pollo & queso).
+                    Authentic of our Bogotan gastronomy 
+                    Meat, Chicken and Cheese.
+                </p>
+                <div class="price">$14.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('7')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto9" class="box">
+                <img src="img/10_sopa_dia.jpg" alt="">
+                <h3>sopa del día</h3>
+                <p>
+                    Tradicional o en crema
+                    Chef's Choise Consomme or Thick cream
+                    soup.
+                </p>
+                <div class="price">$14.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('8')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto10" class="box">
+                <img src="img/12_pechuga_pollo_mediterranea.jpg" alt="">
+                <h3>Pechuga de pollo mediterránea</h3>
+                <p>
+                    Vegetales, salsa de tomate & queso
+                    Grilled Chicken Breast with vegetables,
+                    homemade tomato's sauce and cheese
+                </p>
+                <div class="price">$28.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('9')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto11" class="box">
+                <img src="img/13_lomito_res.jpg" alt="">
+                <h3>Lomito de res</h3>
+                <p>
+                    Solicítelo en medallón o abierto tipobaby, lo cocinamos en grill en el puntod
+                    e cocción de su elección.
+                    Grilled medallion or baby cut, choose thedegree of doneness.
+                </p>
+                <div class="price">$37.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('10')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto12" class="box">
+                <img src="img/14_steak_lomo.jpg" alt="">
+                <h3>Steak de lomo ancho</h3>
+                <p>
+                    Corte grueso de 300 gramos, sazonado &asado en grill.
+                    A thick center cut (300 gr) steak from thetender short loin. Seasoned and chargrilled.
+                </p>
+                <div class="price">$34.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('11')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto13" class="box">
+                <img src="img/15_costillas_cerdo.jpg" alt="">
+                <h3>Costillas de cerdo al estilo Nomad</h3>
+                <p>
+                    Condimentadas con ajo, cebolla &paprika, las cocinamos en fuego lento y 
+                    las servimos con barbecue de cervezalocal
+                    Seasoned with garlic, onion & paprika,simmer and served with local beerbarbecue.
+                </p>
+                <div class="price">$40.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('12')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto14" class="box">
+                <img src="img/16_filete_pescado_caribe.jpg" alt="">
+                <h3>Filete de pescado caribe</h3>
+                <p>
+                    Robalo nacional hecho en sus propiosjugos con papas, vegetales, tomate &leche de coco.
+                    Colombian Bass Filet cooked in its ownjuices with potatoes, vegetables, tomato &coconut milk.
+                </p>
+                <div class="price">$35.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('13')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto15" class="box">
+                <img src="img/17_pollo_rostizado.jpg" alt="">
+                <h3>Pollo rostizado en grill</h3>
+                <p>
+                    Pierna pernil sin hueso sazonado conromero, aceite de olivo, ajo & sal gruesa
+                    Boneless whole leg seasoned withrosemary, olive oil, garlic & coarse salt.
+                </p>
+                <div class="price">$28.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('14')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto16" class="box">
+                <img src="img/18_salmon.jpg" alt="">
+                <h3>Salmon San Andrés</h3>
+                <p>
+                    Filete austral cocinado en grill, lolacamos con salsa de ostras y mantequilla de eneldo
+                    Southern filet grilled, lacquered with oystersauce and dill butter.
+                </p>
+                <div class="price">$40.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('15')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto17" class="box">
+                <img src="img/19_fetuccini.jpg" alt="">
+                <h3>Fetuccini Ámbar</h3>
+                <p>
+                    Cocinamos la pasta al dente;Terminamos la cocción con ragú devegetales asados y calamar.
+                    “al dente” spaguetti cooked with roastedvegetables ragú and calamari.
+                </p>
+                <div class="price">$32.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('16')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto18" class="box">
+                <img src="img/20_arroz_fonce.jpg" alt="">
+                <h3>Arroz del Fonce</h3>
+                <p>
+                    Arroz parbolizado, pulpo, camarón,calamar, pollo & vegetales  Escoge tusalsa. Salsa de soya, de pescado o decurry.
+                    Brown rice, octopus, shrimp, calamari,chicken & vegetables Choose your sauce(soy, fish or curry sauce).
+                </p>
+                <div class="price">$32.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('17')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto19" class="box">
+                <img src="img/21_pasta.jpg" alt="">
+                <h3>Pasta corta al estilo del chef</h3>
+                <p>
+                    Salteada con aceite de romero, minialbóndigas & salsa de tomate elaboradaen casa.
+                    Sautéed spaguetti with rosemary oil, minimeatballs & homemade tomato sauce.
+                </p>
+                <div class="price">$28.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('18')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto20" class="box">
+                <img src="img/22_arroz_colina.jpg" alt="">
+                <h3>Arroz Colina</h3>
+                <p>
+                    Arroz parbolizado preparado con pollo,vegetales, soya & salsa de curry).
+                    Brown rice, chicken, vegetables, soy & currysauce).
+                </p>
+                <div class="price">$28.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('19')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+    
+            <div id="producto21" class="box">
+                <img src="img/23_hamburgesa.jpg" alt="">
+                <h3>Hamburguesa Bluedoors</h3>
+                <p>
+                    Emplatamos la base de pan, carne,lechuga y queso; solicite 3 adicionales desu preferencia.
+                    Bread, Patty, lettuce, cheese. Add up tothree topping.
+                </p>
+                <div class="price">$28.000</div>
+                <input type="button" class="btn" onclick="añadirAlCarrito('20')" value="añadir al carrito">
+                <input type="button" class="btn" value="compra inmediata">
+                <span class="stock">Stock:<span id="stock_unit"></span></span>
+            </div>
+        </div>
+    
+    </section>
+    
+
+    <!-- menu section ends -->
+
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="credit">SUB -GRUPO 03</div>
+
+    </section>>
+
+    <!-- footer section ends -->
+
+    
+    <!-- custom js file link  -->
+    <script src="js/scripts.js"></script>
+</body>
+
+ 
+
+</html>
