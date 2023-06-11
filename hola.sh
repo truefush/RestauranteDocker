@@ -1,1 +1,1 @@
-echo este es un mensaje de jenkins de ejecucioncorrecta
+echo este es un mensaje de jenkins de ejecucion correcta
