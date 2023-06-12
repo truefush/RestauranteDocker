@@ -1,16 +1,16 @@
 
-pipeline{
+pipeline {
     agent any
-    parameters{
-        string(name: 'name_container', defaultValue: 'restaurantedocker-frontend-1', description: 'nombre del contenedor')
+    parameters {
+        string(name: 'name_container', defaultValue: 'frontend-1', description: 'nombre del contenedor')
         string(name: 'name_imagen', defaultValue: 'restaurante-frontend', description: 'nombre de la imagen')
         string(name: 'tag_imagen', defaultValue: 'latest', description: 'etiqueta de la imagen')
         string(name: 'puerto_imagen', defaultValue: '80', description: 'puerto a publicar')
     }
-    environment{
+    environment {
         name_final = "${name_container}${tag_imagen}${puerto_imagen}"
     }
-    stages{
+    stages {
         stage('stop/rm'){
             when{
                 expression{
