@@ -69,7 +69,7 @@ pipeline {
         appName = "variable"
     }
     stages{
-        stage("paso 1"){
+        stage("run"){
             steps{
                 script{
                     sh "docker run -dtp ${puerto_imagen}:80 --name ${name_container} ${name_imagen}:${tag_imagen}"
