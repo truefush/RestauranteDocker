@@ -2,7 +2,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'name_container', defaultValue: 'frontend-1', description: 'nombre del contenedor')
+        string(name: 'name_container', defaultValue: 'restaurantedocker-frontend-1', description: 'nombre del contenedor')
         string(name: 'name_imagen', defaultValue: 'restaurante-frontend', description: 'nombre de la imagen')
         string(name: 'tag_imagen', defaultValue: 'latest', description: 'etiqueta de la imagen')
         string(name: 'puerto_imagen', defaultValue: '80', description: 'puerto a publicar')
@@ -11,7 +11,7 @@ pipeline {
         name_final = "${name_container}${tag_imagen}${puerto_imagen}"
     }
     stages {
-        stage('stop/rm'){
+        /*stage('stop/rm'){
             when{
                 expression{
                     DOCKER_EXIST = sh(returnStdout: true, script: 'echo "$(docker ps -q --filter name=${name_final})"')
@@ -34,7 +34,7 @@ pipeline {
                     '''
                 }
             }
-        }
+        }*/
         stage('run'){
             steps{
                 script{
