@@ -59,7 +59,7 @@ def jsonParse(def json){
 }
 pipeline {
     agent { label 'main'}
-    enviroment {
+    environment {
         appName = "variable"
     }
     stages{
