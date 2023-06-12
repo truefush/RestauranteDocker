@@ -1,4 +1,6 @@
 
+//Prueba que falla con error ERROR: script returned exit code 127 Finished: FAILURE
+
 /*pipeline {
     agent any
     parameters {
@@ -46,11 +48,7 @@
 }*/
 
 
-
-
-
-
-//prueba hola mundo
+//prueba hola mundo funcional
 
 import groovy.json.JsonSlurperClassic
 
@@ -59,20 +57,14 @@ def jsonParse(def json){
 }
 pipeline {
     agent any
-    parameters {
-        string(name: 'name_container', defaultValue: 'restaurantedocker-frontend-2', description: 'nombre del contenedor')
-        string(name: 'name_imagen', defaultValue: 'restaurante-frontend', description: 'nombre de la imagen')
-        string(name: 'tag_imagen', defaultValue: 'latest', description: 'etiqueta de la imagen')
-        string(name: 'puerto_imagen', defaultValue: '5000', description: 'puerto a publicar')
-    }
     environment {
         appName = "variable"
     }
     stages{
-        stage("run"){
+        stage("paso 1"){
             steps{
                 script{
-                    sh '''docker run -dtp ${puerto_imagen}:80 --name ${name_container} ${name_imagen}:${tag_imagen}'''
+                    sh "echo 'hola mundo'"
                 }
             }
         }
