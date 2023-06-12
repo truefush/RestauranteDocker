@@ -72,7 +72,7 @@ pipeline {
         stage("run"){
             steps{
                 script{
-                    sh "docker run -dtp ${puerto_imagen}:80 --name ${name_container} ${name_imagen}:${tag_imagen}"
+                    sh '''docker run -dtp ${puerto_imagen}:80 --name ${name_container} ${name_imagen}:${tag_imagen}'''
                 }
             }
         }
