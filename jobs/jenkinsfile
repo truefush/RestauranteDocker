@@ -95,7 +95,7 @@ pipeline{
                     docker info
                     docker compose version
                     curl --version
-                    jg --version
+                    jq --version
                 '''
             }
         }  
